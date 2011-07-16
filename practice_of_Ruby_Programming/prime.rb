@@ -2,9 +2,9 @@
 require "assert"
 
 def prime?(num)
-    half = (num/2)+1
+    last = Math.sqrt(num).to_i + 1
     div = 2
-    while div <= half
+    while div <= last 
 	if num != div && num % div == 0
 	    return false
 	end
