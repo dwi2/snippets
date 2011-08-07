@@ -1,4 +1,7 @@
 # 請使用下列三種方式嘗試逆轉11_1的陣列
+# 1. 使用Array#reverse
+# 2. 使用Array#sort
+# 3. 使用Array#sort_by
 
 result = Array.new(100) { |i| i+=1 }
 
