@@ -6,12 +6,12 @@ class C
   puts "self is #{self}"
 
   def self.x
-    puts "Class method C.x:"
+    puts "Class method #{self}.x:"
     puts "self is #{self}"
   end
 
   def m
-    puts "Instance method C#m:"
+    puts "Instance method #{self.class}#m:"
     puts "self is #{self}"
   end
 
@@ -26,12 +26,12 @@ module M
   puts "self is #{self}"
 
   def self.x
-    puts "Module method M.x:"
+    puts "Module method #{self}.x:"
     puts "self is #{self}"
   end
 
   def m
-    puts "Instance method M#m:"
+    puts "Instance method #{self.class}#m:"
     puts "self is #{self}"
   end
 end
@@ -40,6 +40,11 @@ class D
   include M
 end
 
+class E < C
+end
+
+puts "***** END OF DECLARATION *****"
+
 C.x
 c = C.new
 c.m
@@ -47,3 +52,7 @@ c.m
 M.x
 d = D.new
 d.m
+
+E.x
+e = E.new
+e.m
